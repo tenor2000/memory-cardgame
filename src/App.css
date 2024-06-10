@@ -4,13 +4,21 @@
   box-sizing: border-box;
 }
 
-.App {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+#root {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align at the top */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90vw;
+  max-width: 1200px;
+  margin: 1rem auto;
   transition: all 0.1s ease-in;
 }
 
@@ -18,10 +26,11 @@
   padding: 1rem 2rem;
   font-size: 1.5rem;
   font-weight: 600;
+  width: 19%;
   border: none;
   border-radius: 0.5rem;
-  background-color: #f1f1f1;
-  color: black;
+  background-color: black;
+  color: white;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.5);
@@ -29,10 +38,58 @@
 
 .App button:hover {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  background-color: #fff;
+  background-color: rgb(100, 7, 7);
 }
 
-.App button.selected {
-  outline: 5px solid #000;
-  background-color: #fff;
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #404040;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 100%
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.card-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  overflow: auto;
+}
+
+.pokemon-card {
+  width: 150px;
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.pokemon-card img {
+  width: 100%;
+  
+  border-radius: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
