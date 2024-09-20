@@ -45,7 +45,7 @@ export function GameBoard() {
 
     if (new Set(clickedCards).size !== clickedCards.length) {
       if (currentScore > bestScore) {
-        setBestScore(currentScore-1); //-1 because it includes the duplicated card that triggere event
+        setBestScore(currentScore-1); //-1 because it includes the duplicated card that triggered event
       }
       setGameStarted(false);
       setGameCards([]);
@@ -65,7 +65,7 @@ export function GameBoard() {
     return (
       <button key={cardObj.id} className="pokemon-card" onClick={() => handleClick(cardObj)}>
         <img src={cardObj.imageUrl} alt={cardObj.name} />
-        <h2>{cardObj.name}</h2>
+        <h5>{cardObj.name}</h5>
       </button>
     );
   };
@@ -94,11 +94,8 @@ export function GameBoard() {
 
   return (
     <>
-      <div>
-        <h1>GameBoard</h1>
-      </div>
       {loading && 
-        <div className='loading'>
+        <div className='inactive'>
           <h2>Setting Up Game...</h2>
         </div>
       }
@@ -108,7 +105,7 @@ export function GameBoard() {
         </div>
       }
       {!gameStarted && <button onClick={() => setGameStarted(true)}>Start</button>}
-      {isGameOver && <h2>Game Over: Try again!</h2>}
+      {isGameOver && !isVictory && <div className="inactive"><h2>Game Over: Try again!</h2></div>}
       {isVictory && <h1>Congratulations, you beat the game!</h1>}
     </>
   );
