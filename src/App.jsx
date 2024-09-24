@@ -1,8 +1,15 @@
-import { useState } from 'react'
 import ScoreCard from './Score'
 import { AppContextProvider } from './Context'
 import { GameBoard } from './GameBoard'
 import './App.css'
+
+// Set background image, having issues doing it through css using github pages
+document.body.style.backgroundImage = "url('./assets/memory.jpg')";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundPosition = "center";
+document.body.style.height = "100vh"; 
+document.body.style.margin = "0"; 
 
 function App() {
   
